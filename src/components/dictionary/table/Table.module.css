@@ -1,8 +1,8 @@
-.cards {
-    grid-area: bd;
+.table {
+    grid-area: tb;
     background-color: rgba(255, 217, 142, 0.804);
     border-radius: 10px;
     border: solid 5px rgb(110, 68, 68);
     text-align: center;
     font-family: cursive;
-  }
+}
