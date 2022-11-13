@@ -1,5 +1,3 @@
-
-
 .wrapper {
   background-color: rgb(98, 51, 28);
   display: grid;
@@ -8,11 +6,3 @@
     "hd  hd  "
     "bd  bd    ";
 }
-/* .notes {
-  grid-area: nt;
-  background-color: rgba(255, 217, 142, 0.804);
-  border-radius: 10px;
-  border: solid 5px rgb(110, 68, 68);
-  text-align: center;
-  font-family: cursive;
-} */
