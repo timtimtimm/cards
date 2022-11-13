@@ -1,0 +1,30 @@
+.addWord{
+    border: solid 2px rgb(110, 68, 68);
+}
+
+.addWord button{
+    margin: 5px;
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+}
+
+.addWord h2 {
+    margin: 5px;
+}
+
+.addWord input {
+    width: 150px;
+    height: 20px;
+    margin: 5px;
+}
+
+.addWord label {
+    padding-right: 5px;
+    font-size: 20px;
+}
+
+.errors {
+    color: red;
+    
+}

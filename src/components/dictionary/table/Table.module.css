@@ -6,3 +6,27 @@
     text-align: center;
     font-family: cursive;
 }
+
+.table td {
+    border: solid 1px rgb(110, 68, 68);
+    width: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.еnglish {
+    border-bottom: dotted 3px gray;
+}
+
+.translation {
+    color: gray;
+}
+
+.borderCell {
+    background-color: white;
+}
+
+.memory {
+    border-bottom: dotted 3px gray;
+    color: green;
+}

@@ -2,10 +2,12 @@ import s from './App.module.css';
 import Header from './components/header/Header';
 import Dictionary from './components/dictionary/Dictionary';
 import Cards from './components/cards/Cards';
+import { useSelector } from 'react-redux';
 
 function App() {
 
-  let togle = true;
+  const togle = useSelector(state => state.dictionary.dictionarySwitch);
+
   return (
     <div className={s.wrapper}>
       <Header />
