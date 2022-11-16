@@ -11,7 +11,7 @@ const sliceDictionary = createSlice({
     dictionaryArray: arr,
     highlightedCell: '',
     editWord: '',
-    statusTable: true,
+    statusTable: 'add',
     dictionarySwitch: true,
     counter: 0
   },

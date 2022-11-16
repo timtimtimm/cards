@@ -8,7 +8,7 @@
 
 }
 
-.header button {
+.header button.togle {
   position: absolute;
   top: 30px;
   left: 1200px;
@@ -16,4 +16,15 @@
   height: 50px;
   font-size: 20px;
   cursor: pointer;
+}
+
+.buttons {
+  position: absolute;
+  top: 50px;
+  left: 120px;
+}
+
+.buttons button{
+  margin-left: 10px;
+  height: 30px;
 }

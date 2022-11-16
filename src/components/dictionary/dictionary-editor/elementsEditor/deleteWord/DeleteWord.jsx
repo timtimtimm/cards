@@ -18,9 +18,9 @@ const DeleteWord = () => {
     return (
         <div className={s.addWord}>
             <h2>Удаление слов</h2>
-            <button onClick={() => changeStatusTable(false)} > Выбрать слова </button><tr />
+            <button onClick={() => changeStatusTable('delete')} > Выбрать слова </button><tr />
             <button onClick={onDeleteWord} >Удалить</button>
-            <button onClick={() => changeStatusTable(true)}>Отмена</button>
+            <button onClick={() => changeStatusTable('add')}>Отмена</button>
         </div>
     )
 }
