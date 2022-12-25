@@ -34,14 +34,21 @@ const EditWord = () => {
     return (
         <div className={s.addWord}>
             <h2>Редактировать слово</h2>
-            <label> Слово:
+            <span>Выбери слово в таблице</span>
+            <ul>
+                <li class={s.form__line}>
+            <label> Слово:</label>
                 <input value={editWord} onChange={(e) => setEditWord(e.target.value)} />
-            </label> <tr />
-            <label> Перевод:
+                </li>
+                <li class={s.form__line}>
+            <label> Перевод: </label>
                 <input value={editTranslation} onChange={(e) => setEditTranslation(e.target.value)} />
-            </label> <tr />
+                </li>
+                <li class={s.form__line}>
             <button onClick={setEdit}>Изменить</button>
             <button onClick={unEdit} >Отмена</button>
+            </li>
+            </ul>
         </div>
     )
 }

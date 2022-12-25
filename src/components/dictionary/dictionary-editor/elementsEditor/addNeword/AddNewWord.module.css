@@ -2,8 +2,31 @@
     border: solid 2px rgb(110, 68, 68);
 }
 
+ul {
+    list-style-type: none;
+}
+
+.form__line {
+    padding: 4px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form__line > label {
+    padding: 4px 8px 4px 0;
+    font-size: 20px;
+    flex: 1;
+
+}
+
+.form__line > input {
+    padding: 4px;
+    flex: 2;
+
+}
+
 .addWord button{
-    margin: 5px;
+   
     cursor: pointer;
     width: 150px;
     height: 30px;
@@ -11,17 +34,6 @@
 
 .addWord h2 {
     margin: 5px;
-}
-
-.addWord input {
-    width: 150px;
-    height: 20px;
-    margin: 5px;
-}
-
-.addWord label {
-    padding-right: 5px;
-    font-size: 20px;
 }
 
 .errors {

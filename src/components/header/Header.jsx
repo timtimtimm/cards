@@ -14,12 +14,13 @@ const Header = () => {
 
     return (
         <div className={s.header}>
+             <h1> Учим слова</h1>
             <div className={s.buttons}>
-                <button onClick={() => setTogleStatusTable('add')} >Все слова</button>
-                <button onClick={() => setTogleStatusTable('remember')}>Выученные слова</button>
-                <button onClick={() => setTogleStatusTable('not remember')}>Невыученные слова</button>
+                <span onClick={() => setTogleStatusTable('add')} >Все слова</span>
+                <span onClick={() => setTogleStatusTable('remember')}>Выученные слова</span>
+                <span onClick={() => setTogleStatusTable('not remember')}>Невыученные слова</span>
             </div>
-            <h1> Учим иностранные слова</h1>
+           
             {togle ? <button className={s.togle} onClick={() => dispatch(onDictionarySwitch())}> Учить слова</button>
                 : <button className={s.togle} onClick={() => dispatch(onDictionarySwitch())}> Редактировать словарь</button>}
         </div>

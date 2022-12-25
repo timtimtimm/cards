@@ -30,7 +30,7 @@ const sliceDictionary = createSlice({
     },
 
     deleteWord(state, action) {
-      state.dictionaryArray = state.dictionaryArray.filter(elem => elem.deleteStatus === false);
+      state.dictionaryArray = state.dictionaryArray.filter(elem => elem.id != action.payload);
       localStorage.setItem("myCards", JSON.stringify(state.dictionaryArray));
     },
 
@@ -79,6 +79,15 @@ const sliceDictionary = createSlice({
       state.dictionarySwitch = !state.dictionarySwitch;
     },
 
+    resetMemoryStatus(state, action) {
+      state.dictionaryArray.map(
+        elem => {   
+            elem.memoryStatus = false; 
+        }
+      );
+      localStorage.setItem("myCards", JSON.stringify(state.dictionaryArray));
+    },
+
     setCounter(state, action) {
       state.counter++;
       if (state.counter === state.dictionaryArray.length) {
@@ -89,5 +98,5 @@ const sliceDictionary = createSlice({
 });
 
 export const { addNewWord, deleteWord, editWords, changeMemoryStatus, setHighlightedCell, togleStatusTable,
-  togleDeleteStatus, onDictionarySwitch, setCounter } = sliceDictionary.actions;
+  togleDeleteStatus, onDictionarySwitch, setCounter, resetMemoryStatus } = sliceDictionary.actions;
 export default sliceDictionary.reducer;

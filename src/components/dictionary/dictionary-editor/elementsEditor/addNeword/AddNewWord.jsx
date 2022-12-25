@@ -19,21 +19,28 @@ const AddNewWord = () => {
         <div className={s.addWord}>
             <h2>Добавить слово</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label> Слово:
-                    <input placeholder="enter word"
-                        {...register("word", {
-                            required: "Поле обязательно к заполнению"
-                        })} />
-                </label>
-                <div className={s.errors}>{errors?.word && errors.word.message} </div>
-                <label>Перевод:
-                    <input placeholder="введи перевод"  {...register("translation",
-                        {
-                            required: "Поле обязательно к заполнению"
-                        })} />
-                </label>
-                <div className={s.errors}>{errors?.translation && errors.translation.message} </div>
-                <button type="submit" > Добавить</button>
+                <ul>
+                    <li class={s.form__line}>
+                        <label> Слово:  </label>
+                        <input placeholder="enter word"
+                            {...register("word", {
+                                required: "Поле обязательно к заполнению"
+                            })} />
+                    </li>
+                    <div className={s.errors}>{errors?.word && errors.word.message} </div>
+
+                    <li class={s.form__line}>
+                        <label>Перевод:  </label>
+                        <input placeholder="введи перевод"  {...register("translation",
+                            {
+                                required: "Поле обязательно к заполнению"
+                            })} />
+                    </li>
+                    <div className={s.errors}>{errors?.translation && errors.translation.message} </div>
+                    <li class={s.form__line}>
+                        <button type="submit" > Добавить</button>
+                    </li>
+                </ul>
             </form>
         </div>
     )

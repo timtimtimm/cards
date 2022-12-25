@@ -1,27 +1,36 @@
 import React from "react";
 import s from './Table.module.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setHighlightedCell, deleteWord } from './../../store/sliceDictionary';
 
 const TableOfLearnedWords = () => {
 
   let wordsArr = useSelector(state => state.dictionary.dictionaryArray);
-
   let filterArr = wordsArr.filter(elem => elem.memoryStatus === true);
 
-  let table = [], tr;
-  let k = Math.ceil(filterArr.length / 7);
-  let n = 0;
+  const dispatch = useDispatch();
+  let highlightedCell = useSelector(state => state.dictionary.highlightedCell);
 
-  for (let i = 0; i <= k; i++) {
+  let onSetHighlightedCell = (id) => {
+    dispatch(setHighlightedCell(id));
+  }
+
+  const onDeleteWord = (id) => {
+    dispatch(deleteWord(id));
+  }
+
+  let table = [], tr;
+
+  for (let elem of filterArr) {
     tr = [];
-    for (let j = 0; j <= 7 && n < filterArr.length; j++) {
-      tr.push(<td key={n} id={filterArr[n].id} >
-        <span className={s.еnglish} id={filterArr[n].id}
-        > {filterArr[n].еnglishWord}</span> <tr />
-        <span className={s.translation} id={filterArr[n].id}
-        > {filterArr[n].translationWord}</span></td>);
-      n++;
-    }
+    tr.push(<td key={elem.id + 1} id={elem.id} className={highlightedCell == elem.id ? s.highlightedCell : s.word}
+      onClick={() => onSetHighlightedCell(elem.id)} > {elem.еnglishWord} </td>);
+    tr.push(<td key={elem.id + 2} id={elem.id} className={highlightedCell == elem.id ? s.highlightedCell : s.word}
+      onClick={() => onSetHighlightedCell(elem.id)} > {elem.translationWord} </td>);
+    tr.push(<td key={elem.id + 3} id={elem.id} className={elem.memoryStatus ? s.know : s.dKnow} >
+      {elem.memoryStatus ? 'I know' : "don't know"} </td>);
+    tr.push(<td key={elem.id + 4} id={elem.id} className={s.delete}
+      onClick={() => onDeleteWord(elem.id)}> delete </td>);
     table.push(<tr>{tr}</tr>);
   }
 
@@ -29,6 +38,12 @@ const TableOfLearnedWords = () => {
     <div className={s.table}>
       <h1> Таблица слов</h1>
       <table >
+        <thead className={s.head}>
+          <td>Слово</td>
+          <td>Перевод</td>
+          <td>Статус</td>
+          <td>Удаление</td>
+        </thead>
         <tbody >
           {table}
         </tbody>
